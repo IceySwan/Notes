@@ -11,40 +11,95 @@ reverse-time NLS equation
 \end{equation}
 and the reverse-space-time NLS equation
 \begin{equation}
-    \rmi q_{t}(x,t) + q_{xx}(x,t) + 2 q^{2}(x,t) q^{*}(-x,-t) = 0 \label{eq:reverse-x-time-NLS}
+    \rmi q_{t}(x,t) + q_{xx}(x,t) + 2 q^{2}(x,t) q^{*}(-x,-t) = 0 \label{eq:reverse-x-t-NLS}
 \end{equation}
 This equations can be derived form the following member of the AKNS hierarchy - the coupled NLS equations
 \begin{equation}
     \rmi q_{t} + q_{xx} - 2q^{2}r = 0, \quad \rmi r_{t} - r_{xx} - 2r^{2}q = 0. \label{eq:coupled-NLS}
 \end{equation}
 Under reductions
+\begin{subequations}
 \begin{align}
     r(x,t) &= -q^{*}(-x,t), \label{eq:reverse-x-NLS-reduction}\\
     r(x,t) &= -q(x,-t), \label{eq:reverse-t-NLS-reduction}\\
-    r(x,t) &= -q(-x,-t), \label{eq:reverse-x-time-NLS-reduction}
+    r(x,t) &= -q(-x,-t), \label{eq:reverse-x-t-NLS-reduction}
 \end{align}
-these coupled equations reduce to the reverse-space NLS equation \eqref{eq:reverse-x-NLS}, the reverse-time NLS equation \eqref{eq:reverse-t-NLS} and the reverse-space-time NLS equation \eqref{eq:reverse-x-time-NLS} respectively.
-\section{Symetry relations of scattering data in the nonlocal NLS equations}
-We first present symmetry relations of the secattering data for the reverse-space NLS equation \eqref{eq:reverse-x-NLS} and the reverse-time NLS equation \eqref{eq:reverse-t-NLS}. The symmetry relations of the scattering data for the reverse-space-time NLS equation \eqref{eq:reverse-x-time-NLS} can be obtained in a similar way. For this pourpose, we first introduce some notations. We define
+\end{subequations}
+these coupled equations reduce to the reverse-space NLS equation \eqref{eq:reverse-x-NLS}, the reverse-time NLS equation \eqref{eq:reverse-t-NLS} and the reverse-space-time NLS equation \eqref{eq:reverse-x-t-NLS} respectively.
+
+\section{N-solitions for general coupled Shorödinger equations}
+Our basic idea for deriving N-soliton of the reverse-space, reverse-time, and reverse-space-time NLS equations \eqref{eq:reverse-x-NLS}–\eqref{eq:reverse-x-t-NLS} is to recognize that these equations are reductions of the coupled Schrödinger equations \eqref{eq:coupled-NLS}. To this end, we begin with the Riemann-Hilbert formulation of N-soliton for the coupled Schrödinger equations, based on given scattering data. By imposing suitable symmetry conditions on the scattering data, we obtain N-soliton solutions for the corresponding nonlocal equations. Specifically, we consider the coupled Schrödinger equations \eqref{eq:coupled-NLS}, which belong to the AKNS hierarchy. Their Lax pair is given by:
+
 \begin{equation}
-    \Lambda = \begin{pmatrix}
-        1& 0 \\
+    Y_{x} = MY, \quad Y_{t} = NY
+\end{equation}
+where 
+\begin{equation}
+    M = \begin{pmatrix}
+        \rmi \zeta & 0 \\
+        0 & -\rmi \zeta
+    \end{pmatrix} + \begin{pmatrix}
+        0 & q \\
+        r & 0
+    \end{pmatrix}, 
+    \quad N = \begin{pmatrix}
+        - \rmi qr - 2 \rmi \zeta^{2} & \rmi q_{x} +2 \zeta q \\
+        -\rmi r_{x} + 2 \zeta r  &  \rmi q r + 2 \rmi \zeta^{2}
+    \end{pmatrix}
+\end{equation}
+Following this Riemann-Hilbert mothed, N-solitons in this system were explictly written down in chapter2 as 
+\begin{equation}
+    q(x,t) = -2 \rmi \frac{\det F}{\det M}, \quad r(x,t) = 2 \rmi \frac{\det G}{\det M} \label{eq:soliton-coupled-NLS}
+\end{equation}
+where $ M $ is a $ N \times N $ matrix, and $ F, G $ are $ N+1 \times N+1 $ matrices. The elements of the matrix $ M $ are given by
+\begin{equation}
+    M_{jk} = \frac{\bar{\mathbf{v}}_{j}\mathbf{v}_{k}}{\bar{\zeta_{j}}-\zeta_{k}}, \quad \mathbf{v}_{k}(x,t)= \rme^{\theta_{k}\Lambda} \mathbf{v}_{k0}, \quad \bar{\mathbf{v}}_{k}(x,t) = \bar{\mathbf{v}}_{k0}\rme^{\bar{\theta}_{k}\Lambda} 
+\end{equation}
+where $\zeta_{k} \in \mathbb{C}_{+}, \bar{\zeta}_{k} \in \mathbb{C}_{-}$ is the eigenvalues and $\mathbf{v}_{k0}, \bar{\mathbf{v}}_{k0}$ is the eigenvalues $ \theta_{k} = -\rmi \zeta_{k} x - 2 \rmi \zeta_{k}^{2}t, \bar{\theta}_{k} = \rmi \bar{\zeta}_{k} x + 2 \rmi \bar{\zeta}_{k}^{2}t $ and
+\begin{equation}
+    \mathbf{v}_{k0} = \begin{bmatrix}
+        a_{k} \\
+        b_{k}
+    \end{bmatrix}, \quad \bar{\mathbf{v}}_{k0} = \begin{bmatrix}
+        \bar{a}_{k} & \bar{b}_{k}
+    \end{bmatrix}, \quad \Lambda = \begin{pmatrix}
+        1 & 0 \\
         0 & -1
-    \end{pmatrix}, \quad 
+    \end{pmatrix}
+\end{equation}
+and 
+\begin{equation}
+    F = \begin{pmatrix}
+        0 & a_{1} \rme^{\theta_{1}} & \cdots & a_{N} \rme^{\theta_{N}} \\
+        \bar{b}_{1} \rme^{-\bar{\theta}_{1}} & M_{11} & \cdots & M_{1N} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \bar{b}_{N} \rme^{-\bar{\theta}_{N}} & M_{N1} & \cdots & M_{NN}
+    \end{pmatrix} 
+    \quad 
+    G = \begin{pmatrix}
+        0 & b_{1} \rme^{-\bar{\theta}_{1}} & \cdots & b_{N} \rme^{-\bar{\theta}_{N}} \\
+        \bar{a}_{1} \rme^{\theta_{1}} & M_{11} & \cdots & M_{1N} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \bar{a}_{N} \rme^{\theta_{N}} & M_{N1} & \cdots & M_{NN}
+    \end{pmatrix}
+\end{equation}
+\section{Symetry relations of scattering data in the nonlocal NLS equations}
+We first present symmetry relations of the secattering data for the reverse-space NLS equation \eqref{eq:reverse-x-NLS} and the reverse-time NLS equation \eqref{eq:reverse-t-NLS}. The symmetry relations of the scattering data for the reverse-space-time NLS equation \eqref{eq:reverse-x-t-NLS} can be obtained in a similar way. For this pourpose, we first introduce some notations. We define
+\begin{equation}
     \sigma_{1} = \begin{pmatrix}
         0 & 1 \\
         1 & 0
     \end{pmatrix}
 \end{equation}
-which is a Paili spin matrix, and use the
+which is a Paili spin matrix.
 \subsection{The reverse-space NLS equation}
 \begin{theorem}
     For the reverser-space NLS equation \eqref{eq:reverse-x-NLS}, if $ \zeta $ is an eigenvalue, so is $ -\zeta^{*} $. Thus, non-pirely-imaginary eigenvalues appear as pairs $(\zeta, -\zeta^{*})$, which lie in the same half of the complex plane. Symmetry ralations on the eigenvactors are given as follows: 
     \begin{enumerate}
         \item If $ (\zeta_{k}, \hat{\zeta_{k}}) \in \mathbb{C_{+}}$, then $\hat{\zeta_{k}} = - \zeta^{*}_{k} $, their column eigenvectors are related as $\hat{\mathbf{v}}_{k0} = \sigma_{1} \mathbf{v}_{k0}^{*}$.
-        \item If $ \zeta_{k} \in i\mathbb{R}_{+} $, its eigenvectors is of the form $\mathbf{v}_{k0} = \begin{bmatrix}1 & e^{\rmi\theta_{k}}\end{bmatrix}^{T} $, where $ \theta_{k} $ is a real constant.
+        \item If $ \zeta_{k} \in i\mathbb{R}_{+} $, its eigenvectors is of the form $\mathbf{v}_{k0} = (1, e^{\rmi\theta_{k}})^{T} $, where $ \theta_{k} $ is a real constant.
         \item If $ (\bar{\zeta_{k}}, \hat{\bar{\zeta_{k}}}) \in \mathbb{C_{-}} $, then $\hat{\bar{\zeta_{k}}} = - \bar{\zeta}^{*}_{k} $, their row eigenvectors are related as $\hat{\bar{\mathbf{v}}}_{k0} = \bar{\mathbf{v}}_{k0}^{*} \sigma_{1}$.
-        \item If $ \bar{\zeta_{k}} \in i\mathbb{R}_{-} $, its eigenvectors is of the form $\bar{\mathbf{v}}_{k0} = \begin{bmatrix}1 & e^{\rmi\bar{\theta}_{k}}\end{bmatrix} $, where $ \bar{\theta}_{k} $ is a real constant.
+        \item If $ \bar{\zeta_{k}} \in i\mathbb{R}_{-} $, its eigenvectors is of the form $\bar{\mathbf{v}}_{k0} = (1 ,e^{\rmi\bar{\theta}_{k}})$, where $ \bar{\theta}_{k} $ is a real constant.
     \end{enumerate}
 \end{theorem}
 To proof these results in perspective, we recall that for the local NLS equation, 
@@ -55,11 +110,13 @@ which is obatined from the coupled Schrödinger equations \eqref{eq:coupled-NLS}
 
 Thus, symmetry relations for the nonlocal NLS equations are different from those local NLS equations.  In particular, for the reverse-space and reverse-space-time NLS equations, eigenvalues in the upper and lower halves of the complex plane are completely independent. This independence allows for novel eigenvalue con-figurations, which will give rise to new types of multi-solitons. This will be demonstrated in the next section. 
 
-Before proving this theorem, we first establish a connection between the discrete scattering datda for N-solitons $\{\zeta_{k}, \bar{\zeta_{k}}, a_{k}, b_{k}, \bar{a_{k}}, \bar{b_{k}}\}(1\neq k \neq N) $ and discrete eigenmodes in the eigenvalue problem $ Y_{x} = MY $ and its adjoint problem $ K_{x} = -KM $, where we set 
+Before proving this theorem, we first establish a connection between the discrete scattering datda for N-solitons $\{\zeta_{k}, \bar{\zeta}_{k}, a_{k}, b_{k}, \bar{a}_{k}, \bar{b}_{k}\}(1\leq k \leq N) $ and discrete eigenmodes in the eigenvalue problem $ Y_{x} = MY $ and its adjoint problem $ K_{x} = -KM $, where we set 
+\begin{subequations}
 \begin{align}
     Y_{x} = - \rmi \zeta \Lambda Y + QY, \label{eq:reverse-x-NLS-eigenvalue}\\
     K_{x} = \rmi \zeta \Lambda K + KQ \label{eq:reverse-x-NLS-adjoint-eigenvalue}
 \end{align}
+\end{subequations}
 where the potenitial matrix $ Q $ is given by
 \begin{equation}
     Q = \begin{pmatrix}
@@ -69,12 +126,110 @@ where the potenitial matrix $ Q $ is given by
 \end{equation} 
 and $ q(x,0), r(x,0) $ are the initial conditions of functions $ q(x,t), r(x,t) $ at $ t = 0 $. Indeed $ \forall \{ \zeta_{k}, a_{k}, b_{k} \} $ of the discrete scattering data, where $ \zeta \in \mathbb{C_{+}} $ is the eigenvalue of \eqref{eq:reverse-x-NLS-eigenvalue}, whose discrete eigenfunction $ Y_{k} $ has the following asymptotics 
 \begin{equation}
-    Y_{k}(x) \to \begin{bmatrix} a_{k} \rme^{-\rmi \zeta_{k} x} \\ 0 \end{bmatrix}, \quad x \to -\infty, \quad Y_{k}(x) \to \begin{bmatrix} 0 \\ -b_{k} \rme^{\rmi \zeta_{k} x} \end{bmatrix}, \quad x \to +\infty
+    Y_{k}(x) \to \begin{bmatrix} a_{k} \rme^{-\rmi \zeta_{k} x} \\ 0 \end{bmatrix}, x \to -\infty, \quad Y_{k}(x) \to \begin{bmatrix} 0 \\ -b_{k} \rme^{\rmi \zeta_{k} x} \end{bmatrix}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}
 \end{equation}
 Analogously, for the eigenvalue $ \bar{\zeta} \in \mathbb{C_{-}} $ of the adjoint eigenvalue problem \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}, the discrete eigenfunction $ K_{k} $ has the following asymptotics 
 \begin{equation}
-    K_{k}(x) \to \begin{bmatrix} \bar{a}_{k} \rme^{-\rmi \bar{\zeta}_{k} x} & 0 \end{bmatrix}, \quad x \to -\infty, \quad K_{k}(x) \to \begin{bmatrix} 0 & -\bar{b}_{k}\rme^{-\rmi \bar{\zeta}_{k}x} \end{bmatrix}, \quad x \to +\infty
+    K_{k}(x) \to \begin{bmatrix} \bar{a}_{k} \rme^{-\rmi \bar{\zeta}_{k} x} & 0 \end{bmatrix}, x \to -\infty, \quad K_{k}(x) \to \begin{bmatrix} 0 & -\bar{b}_{k}\rme^{-\rmi \bar{\zeta}_{k}x} \end{bmatrix}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}
 \end{equation}
-In view of this connection, in order to derive symmetry relatiuons on the (discrete) scattering data
+In view of this connection, in order to derive symmetry relations on the (discrete) scattering data, we will use symmetry relations of discrete eigenmodes in the eigenvalue problems \eqref{eq:reverse-x-NLS-eigenvalue}-\eqref{eq:reverse-x-NLS-adjoint-eigenvalue}.
+\begin{proof}
+    The reverse-space NLS equation\eqref{eq:reverse-x-NLS} was derived from the coupled Schrödinger equations \eqref{eq:coupled-NLS} under the reduction of \eqref{eq:reverse-x-NLS-reduction}, and the potential matrix $ Q $ is 
+    \begin{equation}
+        Q = \begin{pmatrix}
+            0 & q(x,0) \\
+            -q^{*}(-x,0) & 0
+        \end{pmatrix}
+    \end{equation}
+    Obviously we have $ Q^{*}(-x) = - \sigma^{-1}_{1} Q \sigma_{1} $, so
+    \begin{equation}
+        \begin{aligned}
+            Y_{x} = - \rmi \zeta \Lambda Y + QY &\implies -Y_{x}(-x) = -\rmi \zeta \Lambda Y(-x) + Q(-x)Y(-x) \\
+            &\implies -Y^{*}(-x) = \rmi \zeta^{*} \Lambda Y^{*}(-x) + Q^{*}(-x)Y^{*}(-x) \\
+            &\implies - \alpha \sigma_{1}Y^{*}(-x) = \rmi \alpha \sigma_{1} \zeta^{*} \Lambda Y^{*}(-x) - \alpha \sigma_{1} (\sigma_{1}^{-1}Q\sigma_{1})Y^{*}(-x) \\ 
+            &\implies \alpha \sigma_{1}Y^{*}(-x) = - \rmi \alpha (-\zeta^{*}) \Lambda \sigma_{1}Y^{*}(-x) + Q \alpha \sigma_{1}Y^{*}(-x) \\
+        \end{aligned}
+    \end{equation}
+    We get $ \hat{Y}_{x} = - \rmi \hat{\zeta}\Lambda \hat{Y} + Q \hat{Y} $, where
+    \begin{equation}
+        \hat{\zeta} - - \zeta^{*}, \hat{Y} = \alpha \sigma_{1}Y^{*}(-x) , \quad \forall \alpha \in \mathbb{C} 
+    \end{equation}
+    This equation shows that: if $ \zeta_{k} \in \mathbb{C}_{+} $ is an eigenvalue of the scattering problem \eqref{eq:reverse-x-NLS-eigenvalue}, then $ \hat{\zeta}_{k} = - \zeta_{k}^{*} \in \mathbb{C}_{+} $ is also, and 
+    \begin{equation}
+        \hat{\mathbf{v}}_{k0} = -\alpha \sigma_{1}\mathbf{v}_{k0}^{*} = \begin{pmatrix}
+            -\alpha b_{k}^{*} \\
+            -\alpha a_{k}^{*}
+        \end{pmatrix} \label{eq:reverse-x-NLS-eigenvector}
+    \end{equation}
+
+    If $\Re(\zeta_{k}) \neq 0 \implies \hat{\zeta}_{k} = -\zeta^{*}_{k} \neq \zeta_{k} $. In this case, when the above $ \hat{\mathbf{v}}_{k0} $ expression is inserted into the N-soliton formulae \eqref{eq:soliton-coupled-NLS}, then constant $ -\alpha $ cancels out and does not contribute to the soluition. Thus we can set $ -\alpha = 1 $ without loss og generality. Then $ \hat{\mathbf{v}}_{k0} = \sigma_{1}\mathbf{v}_{k0}^{*} $, hence the part 1 is proved.
+    
+    If $\Re(\zeta_{k}) = 0 \implies \hat{\zeta}_{k} = -\zeta^{*}_{k} = \zeta_{k} $. Thus, their eigenvactors are also the same. Without loss of generality, we can scale the eigenvector $ \mathbf{v}_{k0} $ so that $ a_{k} = 1 $, inserting this into \eqref{eq:reverse-x-NLS-eigenvector}, we have $ \alpha = 1, \mathbf{v}_{k0} = (1, -\alpha)^{T}$, denoting $ -\alpha = e^{\rmi \theta_{k}}, \theta_{k} \in \mathbb{R}$, we get $ \mathbf{v}_{k0} = (1, e^{\rmi \theta_{k}})^{T} $, hence the part 2 is proved.
+
+    Repeating the above arguments on the adjoint eigenvalue problem \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}, parts 3 and 4 can be similarly proved.
+\end{proof}
+
 \subsection{The reverse-time NLS equation}
+\begin{theorem}
+    For the reverse-time NLS equation \eqref{eq:reverse-t-NLS}. If $\zeta$ is a discrete eigenvalue of the associated Lax pair, then so is $-\zeta$. Hence, the discrete spectrum is symmetric with respect to the origin, and eigenvalues always appear in pairs $(\zeta, -\zeta)$, located in opposite halves of the complex plane.
+
+    For each such pair $(\zeta_k, \bar{\zeta}_k)$ with $\zeta_k \in \mathbb{C}_+$ and $\bar{\zeta}_k = -\zeta_k \in \mathbb{C}_-$, the associated eigenvectors $\mathbf{v}_{k0}$ and $\bar{\mathbf{v}}_{k0}$ satisfy $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $.
+\end{theorem}
+\begin{proof}
+    The reverse-time NLS equation \eqref{eq:reverse-t-NLS} was derived from the coupled Schrödinger equations \eqref{eq:coupled-NLS} under the reduction of \eqref{eq:reverse-x-NLS-reduction}, and the potential matrix $ Q $ is
+    \begin{equation}
+        Q = \begin{pmatrix}
+            0 & q(x,0) \\
+            -q(x,0) & 0
+        \end{pmatrix}
+    \end{equation}
+    which fearures the following syummetry $ Q^{T}(x) = -Q(x) $. Then, taking the transpose of the eigenvalue problem \eqref{eq:reverse-x-NLS-eigenvalue}, we have
+    \begin{equation}
+            Y_{x} = - \rmi \zeta \Lambda Y + QY \implies Y_{x}^{T} = -\rmi \zeta Y^{T} \Lambda^{T} + Y^{T} Q^{T} \implies Y_{x}^{T} = -\rmi \zeta Y^{T} \Lambda - Y^{T}Q
+    \end{equation}
+    We get $ \bar{Y}_{x} = \rmi \bar{Y} \Lambda - Y^{T}Q $, where
+    \begin{equation}
+        \bar{\zeta} = -\zeta, \bar{Y}(x) = Y^{T}(x)
+    \end{equation} 
+    It means that $ [\bar{\zeta}, \bar{Y}(x)] $ satifies the adjoint eigenvalue equation \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}. 
+
+    Thus, if $ \zeta_{k} \in \mathbb{C}_{+} $ is an eigenvalue of the scattering problem \eqref{eq:reverse-x-NLS-eigenvalue}, then $ \bar{\zeta}_{k} = -\zeta_{k} \in \mathbb{C}_{-} $ is an eigenvalue of the adjoint scattering problem \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}. Utilizing this eigenfunction relation as well as the large-x asymptotics of the eigenfunctions and adjoint eigenfunctions in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}-\eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we readily find that $ \bar{a}_{k} = a_{k}, \bar{b}_{k} = b_{k} $ and $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $. This completes the proof of the theorem.
+   \end{proof}
 \subsection{The reverse-space-time NLS equation}
+\begin{theorem}
+    For the reverse-space-time NLS equation \eqref{eq:reverse-x-t-NLS}, eigenvalues $ \zeta $ can be anywhere in $ \mathbb{C}_{+} $, and eigenvalues $ \bar{\zeta}_{k} $ can be anywhere in $ \mathbb{C}_{-} $. However, their eigenvectors must be of the forms
+    \begin{equation}
+        \mathbf{v}_{k0} = (1, \omega_{k}), \quad \bar{\mathbf{v}}_{k0} = (1, \bar{\omega}_{k})
+    \end{equation}
+    where $ \omega_{k} = \pm 1, \bar{\omega}_{k} = \pm 1 $
+\end{theorem}
+\begin{proof}
+    The reverse-space-time NLS equation \eqref{eq:reverse-x-t-NLS} was derived from the coupled Schrödinger equations \eqref{eq:coupled-NLS} under the reduction of \eqref{eq:reverse-x-t-NLS-reduction}, and the potential matrix $ Q $ is
+    \begin{equation}
+        Q = \begin{pmatrix}
+            0 & q(x,0) \\
+            -q(-x,0) & 0
+        \end{pmatrix}
+    \end{equation}
+    which features the following symmetry $ Q^{*}(-x) = -\sigma_{1}^{-1}Q(x)\sigma_{1} $. Then, taking the adjoint of the eigenvalue problem \eqref{eq:reverse-x-NLS-eigenvalue}, we have
+    \begin{equation}
+        \begin{aligned}
+        Y_{x} = -\rmi \zeta \Lambda Y + QY &\implies -Y_{x}(-x) = -\rmi \zeta \Lambda Y(-x) + Q(-x)Y(-x) \\
+        &\implies -\sigma_{1} Y_{x}(-x)= -\rmi \zeta \sigma_{1}\Lambda Y(-x) + \sigma_{1}Q(-x)Y(-x) \\
+        &\implies \sigma_{1}Y_{x}(-x) = -\rmi \zeta \sigma_{1}\Lambda Y(-x) +\sigma_{1}Q(-x)Y(-x) \\
+        \end{aligned}
+    \end{equation}
+    We get $ \hat{Y}_{x}(x) = -\rmi \zeta  \Lambda Y(x) + QY(x) $, where
+    \begin{equation}
+        \hat{Y}(x) = \sigma_{1}Y(-x) \label{eq:reverse-x-t-NLS-eigenvector}
+    \end{equation}
+    This equation means that for any eigenvalue $ \zeta_{k} \in \mathbb{C}_{+} $ and $ Y_{k}(x) $ is its eigenfunction, so is $ \hat{Y}_{k}(x) = \sigma_{1} Y(-x)$. Thus $ \hat{Y_{k}} $ amd $ Y_{k} $ are rlinearly dependent as 
+    \begin{equation}
+        Y_{k}(x) = \omega_{k}\sigma_{1}Y_{k}(x)
+    \end{equation}
+    where $ \omega_{k} $ is some constant. Utilizing this relation and the large-x asymptotics of the eigenfunction $ Y_{k}(x) $ in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}, we readily find that $ a_{k} = \omega_{k} b_{k}, b_{k} = \omega_{k} a_{k} $, so $ \omega_{k} = \pm 1 $. Without loss of generality, we can scale the eigenvector $\mathbf{v}_{k0} $ so that $ a_{k} = 1$, then $ \mathbf{v}_{k0} = (1, \omega_{k})^{T} $.
+
+    Since \eqref{eq:reverse-x-t-NLS-eigenvector} also means that for any eigenvalue $ \bar{\zeta}_{k} \in \mathbb{C}_{-} $, if $ K_{k}(x) $ is its adjoint eigenfunction, so is $ \hat{K}_{k}(x) = \sigma_{1} K(-x) $. Hence utilizing this relation and the large-x asymptotics of the adjoint eigenfunction $ \hat{K}_{k}(x) $ in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we can similarly show that $ \bar{\mathbf{v}}_{k0} = (1, \bar{\omega}_{k}) $, where $ \bar{\omega}_{k} = \pm 1 $. This complests the proof of the theorem.
+\end{proof}
+
+Before concluding this section, we point that it is also possible to impose $ (q,r) $ reductions \eqref{eq:reverse-x-NLS-reduction}-\eqref{eq:reverse-x-t-NLS-reduction} directly on the determinant solutions \eqref{eq:soliton-coupled-NLS} in order to extract symmetry relations on the scattering data $ \{\zeta_{k},\bar{\zeta}_{k},\mathbf{v}_{k0}, \bar{\mathbf{v}}_{k0}, 1 \leq k \leq N \} $. However, our derivation of these relations above is easier. In addition, this derivation is more insightful since it is in the inverse-scattering and Riemann-Hilbert framework.
