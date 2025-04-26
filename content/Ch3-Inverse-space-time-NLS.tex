@@ -93,7 +93,7 @@ We first present symmetry relations of the secattering data for the reverse-spac
 \end{equation}
 which is a Paili spin matrix.
 \subsection{The reverse-space NLS equation}
-\begin{theorem}
+\begin{theorem} \label{thm:NLS-inverse-x}
     For the reverser-space NLS equation \eqref{eq:reverse-x-NLS}, if $ \zeta $ is an eigenvalue, so is $ -\zeta^{*} $. Thus, non-pirely-imaginary eigenvalues appear as pairs $(\zeta, -\zeta^{*})$, which lie in the same half of the complex plane. Symmetry ralations on the eigenvactors are given as follows: 
     \begin{enumerate}
         \item If $ (\zeta_{k}, \hat{\zeta_{k}}) \in \mathbb{C_{+}}$, then $\hat{\zeta_{k}} = - \zeta^{*}_{k} $, their column eigenvectors are related as $\hat{\mathbf{v}}_{k0} = \sigma_{1} \mathbf{v}_{k0}^{*}$.
@@ -170,7 +170,7 @@ In view of this connection, in order to derive symmetry relations on the (discre
 \end{proof}
 
 \subsection{The reverse-time NLS equation}
-\begin{theorem}
+\begin{theorem}\label{thm:NLS-inverse-t}
     For the reverse-time NLS equation \eqref{eq:reverse-t-NLS}. If $\zeta$ is a discrete eigenvalue of the associated Lax pair, then so is $-\zeta$. Hence, the discrete spectrum is symmetric with respect to the origin, and eigenvalues always appear in pairs $(\zeta, -\zeta)$, located in opposite halves of the complex plane.
 
     For each such pair $(\zeta_k, \bar{\zeta}_k)$ with $\zeta_k \in \mathbb{C}_+$ and $\bar{\zeta}_k = -\zeta_k \in \mathbb{C}_-$, the associated eigenvectors $\mathbf{v}_{k0}$ and $\bar{\mathbf{v}}_{k0}$ satisfy $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $.
@@ -196,7 +196,7 @@ In view of this connection, in order to derive symmetry relations on the (discre
     Thus, if $ \zeta_{k} \in \mathbb{C}_{+} $ is an eigenvalue of the scattering problem \eqref{eq:reverse-x-NLS-eigenvalue}, then $ \bar{\zeta}_{k} = -\zeta_{k} \in \mathbb{C}_{-} $ is an eigenvalue of the adjoint scattering problem \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}. Utilizing this eigenfunction relation as well as the large-x asymptotics of the eigenfunctions and adjoint eigenfunctions in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}-\eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we readily find that $ \bar{a}_{k} = a_{k}, \bar{b}_{k} = b_{k} $ and $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $. This completes the proof of the theorem.
    \end{proof}
 \subsection{The reverse-space-time NLS equation}
-\begin{theorem}
+\begin{theorem}\label{thm:NLS-inverse-x-t}
     For the reverse-space-time NLS equation \eqref{eq:reverse-x-t-NLS}, eigenvalues $ \zeta $ can be anywhere in $ \mathbb{C}_{+} $, and eigenvalues $ \bar{\zeta}_{k} $ can be anywhere in $ \mathbb{C}_{-} $. However, their eigenvectors must be of the forms
     \begin{equation}
         \mathbf{v}_{k0} = (1, \omega_{k}), \quad \bar{\mathbf{v}}_{k0} = (1, \bar{\omega}_{k})

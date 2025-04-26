@@ -1,0 +1,76 @@
+\chapter{3D Reverse Time Space NLS}
+\section{AKNS's some reductions}
+In this chapter, let us focus on the $ 3 \times 3 $ reverse space nonlocal AKNS system: Consider the Lax pair
+\begin{equation}
+    \begin{aligned}
+        \Phi_{x} = U \Phi = (\rmi \sigma_{3} + P)\Phi, \\
+        \Phi_{t} = V \Phi = - (2 \rmi \lambda^{2} + 2\lambda P + \rmi(P^{2} + P_{x})\sigma_{3})\Phi, 
+    \end{aligned}
+\end{equation}
+where 
+\begin{equation}
+    P = \begin{pmatrix}
+        0 & p & q \\
+        -r_{1} & 0 & 0 \\
+        -r_{2} & 0 & 0
+    \end{pmatrix}, \quad \sigma_{3} = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+\end{equation}
+where $ p, q, r_{1}, r_{2} $ are functions of $ (x,t) $, $ r_{1} = ap_{1} + bq_{1}, r_{2} = cp_{1} + dq_{1}$ and $ a, b, c, d, \lambda \in \mathbb{C} $. Thus, because the zero curve equation $ U_{t} - V_{x} +[U,V] = 0 $ can be written as
+\begin{equation}
+    \rmi P_{t} + P_{xx}\sigma_{3} + 2P^{3}\sigma_{3} = 0, \label{eq:3d-NLS-zero-curve-equation}
+\end{equation}
+we can obtain the following equations:
+\begin{subequations}
+    \begin{align}
+        \rmi p_{t} + p_{xx} + 2p(pr_{1} + qr_{2}) &= 0, \\
+        \rmi q_{t} + q_{xx} + 2q(pr_{1} + qr_{2}) &= 0, \\
+        -\rmi r_{1t} + r_{1xx} + 2r_{1}(pr_{1} + qr_{2}) &= 0, \\
+        -\rmi r_{2t} + r_{2xx} + 2r_{2}(pr_{1} + qr_{2}) &= 0.
+    \end{align} \label{eq:4-component-AKNS-equations}
+\end{subequations}
+For the above equations \eqref{eq:4-component-AKNS-equations}, we can obtain $ p_{1} $ maybe is $ p, p(-x,t), p(x,-t), p(-x,-t) $ and their conjugation, due to the compatibility condition, $p_1$ can only be $ p^{*}(x,t), p^{*}(-x,t), p(x,-t), p(-x,-t) $, and $ q_1 $ has a similar reductions.
+
+If we condiser $p_{1} = p^{*}(-x,t), q_{1} = q^{*}(-x,t) $, then we can obtain the inverse space equations:
+\begin{align}
+    \rmi p_{t} + p_{xx} + 2p \left[ app^{*}(-x,t) + bpq^{*}(-x,t) + b^{*}p^{*}(-x,t)q + dqq^{*}(-x,t) \right] = 0, \label{eq:AKNS-inverse-x}\\
+    \rmi q_{t} + q_{xx} + 2q \left[ app^{*}(-x,t) + bpq^{*}(-x,t) + b^{*}p^{*}(-x,t)q + dqq^{*}(-x,t) \right] = 0
+\end{align}
+If we consider $ p_{1} = p(x,-t), q_{1} = q(x,-t) $, then we can obtain the inverse time equations:
+\begin{align}
+    \rmi p_{t} + p_{xx} + 2p \left[ app^{*}(x,-t) + bpq^{*}(x,-t) + b^{*}p^{*}(x,-t)q + dqq^{*}(x,-t) \right] = 0, \label{eq:AKNS-inverse-t}\\
+    \rmi q_{t} + q_{xx} + 2q \left[ app^{*}(x,-t) + bpq^{*}(x,-t) + b^{*}p^{*}(x,-t)q + dqq^{*}(x,-t) \right] = 0
+\end{align}
+If we consider $ p_{1} = p(-x,-t), q_{1} = q(-x,-t) $, then we can obtain the inverse time equations:
+\begin{align}
+    \rmi p_{t} + p_{xx} + 2p \left[ app^{*}(-x,-t) + bpq^{*}(-x,-t) + b^{*}p^{*}(-x,-t)q + dqq^{*}(-x,-t) \right] = 0, \label{eq:AKNS-inverse-x-t}\\
+    \rmi q_{t} + q_{xx} + 2q \left[ app^{*}(-x,-t) + bpq^{*}(-x,-t) + b^{*}p^{*}(-x,-t)q + dqq^{*}(-x,-t) \right] = 0
+\end{align}
+\section{the relation between origin and inverse}
+Before we get started, we need some denotes. 
+% 从此处开始继续
+\begin{equation}
+    \Theta = \begin{pmatrix}
+        1 & & \\ & -d & b \\ & c & -a
+    \end{pmatrix}, \quad \hat{\Theta} = \begin{pmatrix}
+        1 & & \\ & a & b \\ & c & d
+    \end{pmatrix}
+\end{equation} 
+
+Following Chapter 3's \thmref{thm:NLS-inverse-x} - \thmref{thm:NLS-inverse-x-t}, we give the following three theorems. 
+\begin{theorem}
+    For the inverse-space AKNS \eqref{eq:AKNS-inverse-x}, if $ \zeta $ is an eigenvalue, so is $ -\zeta^{*} $. Thus non-pirely-imaginary eigenvalues appear as $(\zeta, -\zeta^{*})$, which lie in the same half of the complex plane. Symmetry relations are given as follows:
+    \begin{enumerate}
+        \item If $ (\zeta_{k}, \hat{\zeta_{k}}) \in \mathbb{C_{+}}$, then $\hat{\zeta_{k}} = - \zeta^{*}_{k} $, their column eigenvectors are related as $\hat{\mathbf{v}}_{k0} = \sigma_{1} \mathbf{v}_{k0}^{*}$.
+        \item If $ \zeta_{k} \in i\mathbb{R}_{+} $, its eigenvectors is of the form $\mathbf{v}_{k0} = (1, e^{\rmi\theta_{k}})^{T} $, where $ \theta_{k} $ is a real constant.
+        \item If $ (\bar{\zeta_{k}}, \hat{\bar{\zeta_{k}}}) \in \mathbb{C_{-}} $, then $\hat{\bar{\zeta_{k}}} = - \bar{\zeta}^{*}_{k} $, their row eigenvectors are related as $\hat{\bar{\mathbf{v}}}_{k0} = \bar{\mathbf{v}}_{k0}^{*} \sigma_{1}$.
+        \item If $ \bar{\zeta_{k}} \in i\mathbb{R}_{-} $, its eigenvectors is of the form $\bar{\mathbf{v}}_{k0} = (1 ,e^{\rmi\bar{\theta}_{k}})$, where $ \bar{\theta}_{k} $ is a real constant.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
