@@ -1,15 +1,15 @@
 \chapter{3D Reverse Time Space NLS}
 \section{AKNS's some reductions}
-In this chapter, let us focus on the $ 3 \times 3 $ reverse space nonlocal AKNS system: Consider the Lax pair
+In this chapter, let us focus on the $ 3 \times 3 $ reverse space nonlocal AKNS system: Consider the Lax pair. 
 \begin{equation}
     \begin{aligned}
-        \Phi_{x} = U \Phi = (\rmi \sigma_{3} + P)\Phi, \\
-        \Phi_{t} = V \Phi = - (2 \rmi \lambda^{2} + 2\lambda P + \rmi(P^{2} + P_{x})\sigma_{3})\Phi, 
-    \end{aligned}
+        \Phi_{x} &= U \Phi = (\rmi \lambda \sigma_{3} + P_{0})\Phi, \\
+        \Phi_{t} &= V \Phi = - \left[2 \rmi \lambda^{2} \sigma_{3}+ 2\lambda P + \rmi(P_{0}^{2} + P_{0x})\sigma_{3} \right]\Phi, 
+    \end{aligned}\label{eq:Sis-Lax-Pair}
 \end{equation}
 where 
 \begin{equation}
-    P = \begin{pmatrix}
+    P_{0} = \begin{pmatrix}
         0 & p & q \\
         -r_{1} & 0 & 0 \\
         -r_{2} & 0 & 0
@@ -19,9 +19,9 @@ where
         0 & 0 & -1
     \end{pmatrix}
 \end{equation}
-where $ p, q, r_{1}, r_{2} $ are functions of $ (x,t) $, $ r_{1} = ap_{1} + bq_{1}, r_{2} = cp_{1} + dq_{1}$ and $ a, b, c, d, \lambda \in \mathbb{C} $. Thus, because the zero curve equation $ U_{t} - V_{x} +[U,V] = 0 $ can be written as
+where $ p, q, r_{1}, r_{2} $ are functions of $ (x,t) $, $ r_{1} = ap_{1} + bq_{1}, r_{2} = cp_{1} + dq_{1}$ and $ a, b, c, d, \sigma_{3} \in \mathbb{C} $. Thus, because the zero curve equation $ U_{t} - V_{x} +[U,V] = 0 $ can be written as
 \begin{equation}
-    \rmi P_{t} + P_{xx}\sigma_{3} + 2P^{3}\sigma_{3} = 0, \label{eq:3d-NLS-zero-curve-equation}
+    \rmi P_{0t} + P_{0xx}\sigma_{3} + 2P_{0}^{3}\sigma_{3} = 0, \label{eq:3d-NLS-zero-curve-equation}
 \end{equation}
 we can obtain the following equations:
 \begin{subequations}
@@ -34,7 +34,7 @@ we can obtain the following equations:
 \end{subequations}
 For the above equations \eqref{eq:4-component-AKNS-equations}, we can obtain $ p_{1} $ maybe is $ p, p(-x,t), p(x,-t), p(-x,-t) $ and their conjugation, due to the compatibility condition, $p_1$ can only be $ p^{*}(x,t), p^{*}(-x,t), p(x,-t), p(-x,-t) $, and $ q_1 $ has a similar reductions.
 
-If we condiser $p_{1} = p^{*}(-x,t), q_{1} = q^{*}(-x,t) $, then we can obtain the inverse space equations:
+If we condiser $ p_{1} = p^{*}(-x,t), q_{1} = q^{*}(-x,t) $, then we can obtain the inverse space equations:
 \begin{align}
     \rmi p_{t} + p_{xx} + 2p \left[ app^{*}(-x,t) + bpq^{*}(-x,t) + b^{*}p^{*}(-x,t)q + dqq^{*}(-x,t) \right] = 0, \label{eq:AKNS-inverse-x}\\
     \rmi q_{t} + q_{xx} + 2q \left[ app^{*}(-x,t) + bpq^{*}(-x,t) + b^{*}p^{*}(-x,t)q + dqq^{*}(-x,t) \right] = 0
@@ -49,28 +49,191 @@ If we consider $ p_{1} = p(-x,-t), q_{1} = q(-x,-t) $, then we can obtain the in
     \rmi p_{t} + p_{xx} + 2p \left[ app^{*}(-x,-t) + bpq^{*}(-x,-t) + b^{*}p^{*}(-x,-t)q + dqq^{*}(-x,-t) \right] = 0, \label{eq:AKNS-inverse-x-t}\\
     \rmi q_{t} + q_{xx} + 2q \left[ app^{*}(-x,-t) + bpq^{*}(-x,-t) + b^{*}p^{*}(-x,-t)q + dqq^{*}(-x,-t) \right] = 0
 \end{align}
-\section{the relation between origin and inverse}
-Before we get started, we need some denotes. 
+
+Before we get started, let's consider another Lax pair. This lax pair has better symmetry and ready solutions. And it avoids the disadvantages of $ ad-bb^* $.
+\begin{align}
+    \Phi_{x} &= (- \rmi \lambda \Lambda + P) \Phi, \\
+    \Phi_{t} &= \left[2 \rmi \lambda^{2} \Lambda - 2 \rmi \lambda P + \rmi(P^{2} + P_{x}\Lambda) \right]\Phi,
+\end{align}
+where 
+\begin{equation}
+    P=\begin{pmatrix}
+        0 & 0 & p \\ 0 & 0 & q \\ -r_{1} & -r_{2} & 0
+    \end{pmatrix} \quad
+    \Lambda = \begin{pmatrix}
+        -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 
+    \end{pmatrix}
+\end{equation}
+and $ p, q, r_{1}, r_{2} $ is same as above. The Lax pair is equivalent to the AKNS system \eqref{eq:Sis-Lax-Pair}. You can see the zero curve equations's 13, 23, 31, 32 to find that is same to \eqref{eq:4-component-AKNS-equations}
 % 从此处开始继续
 \begin{equation}
-    \Theta = \begin{pmatrix}
-        1 & & \\ & -d & b \\ & c & -a
-    \end{pmatrix}, \quad \hat{\Theta} = \begin{pmatrix}
-        1 & & \\ & a & b \\ & c & d
+    \Theta_{0} = \begin{pmatrix}
+        a & b & \\ b^{*} & d &  \\ &  & 1 
     \end{pmatrix}
 \end{equation} 
+and the eigenvalue problem and the adjoint eigenvalue problem are given as follows:
+\begin{subequations}
+    \begin{align}
+        Y_{x} &= \rmi \zeta \sigma_{3} Y + PY, \label{eq:AKNS-x-Lax} \\
+        K_{x} &= -\rmi \zeta^{*}K \sigma_{3} - K P \label{eq:AKNS-x-adjoint-Lax}, 
+    \end{align}
+\end{subequations}
+Following previous Chapter's \thmref{thm:NLS-inverse-x} - \thmref{thm:NLS-inverse-x-t}, we give the following three theorems. 
 
-Following Chapter 3's \thmref{thm:NLS-inverse-x} - \thmref{thm:NLS-inverse-x-t}, we give the following three theorems. 
-\begin{theorem}
+\section{Solution of 3d NLS}
+Following this Riemann-Hilbert mothed, the solution is given by Wang and Yang\cite{Wang2010JMP}. N-solitons in this system were explictly written as:
+
+\begin{equation}
+    \begin{bmatrix}
+        p(x,t) \\ q(x,t)
+    \end{bmatrix} = 2 \rmi \sum_{j,k=1}^{N} \begin{bmatrix} \alpha_{k} \\ \beta_{j} \end{bmatrix} \rme^{-(\theta_{k}^{*}-\theta_{j})}(M^{-1})_{jk},
+\end{equation}
+where 
+\begin{equation}
+    M_{jk} = \frac{1}{\lambda_{j}^{*}-\lambda_{k}}\left[(a \alpha_{j}^{*}\alpha_{k}+ b\beta_{j}^{*}\alpha_{k}+ b^{*}\alpha_{j}^{*}\beta_{k}+d \beta_{j}^{*}\beta_{k})\rme^{-(\theta_{k}+\theta_{j}^{*})} + \rme^{\theta_{k}+\theta_{j}^{*}}\right]
+\end{equation}
+and $\theta_{k} = - \rmi \lambda_{k} x + 2 \rmi \lambda_{k}^{2} t $. 
+\begin{proof}
+    It can be written in a more general form
+    \begin{align}
+    p(x,t) = - 2 \rmi P_{12} = - 2 \rmi \left( \sum_{j,k=1}^{N} v_{j}(M^{-1})_{jk} \hat{v}_{k}\right)_{12} \\
+    q(x,t) = - 2 \rmi P_{13} = - 2 \rmi \left( \sum_{j,k=1}^{N} v_{j}(M^{-1})_{jk} \hat{v}_{k}\right)_{13} \\
+    r_{1}(x,t) = - 2 \rmi P_{13} = - 2 \rmi \left( \sum_{j,k=1}^{N} v_{j}(M^{-1})_{jk} \hat{v}_{k}\right)_{31} \\
+    r_{2}(x,t) = - 2 \rmi P_{13} = - 2 \rmi \left( \sum_{j,k=1}^{N} v_{j}(M^{-1})_{jk} \hat{v}_{k}\right)_{32}  
+\end{align}
+where 
+\begin{equation}
+    M_{jk} = \frac{\hat{v}_{j}v_{k}}{\lambda^{*}-\lambda_{k}}, \quad 
+     v_{k} = e^{\theta_{k}\sigma_{3}}v_{k0}, \quad \hat{v}_{k} = v_{k}^{\dagger}\Theta_{0}
+\end{equation} 
+If we set $\mathbf{v}_{k0} = (\alpha_{k}, \beta_{k},1)^{T} $, then
+\begin{equation}
+    \begin{aligned}
+    M_{jk} &= \frac{\hat{v}_{j}v_{k}}{\lambda^{*}-\lambda_{k}} = \frac{1}{\lambda_{j}^{*}-\lambda_{k}} v_{j}^{\dagger} \Theta_{0} v_{k} \\
+    &= \frac{1}{\lambda^{*}-\lambda_{k}}  (\alpha_{j}^{*}, \beta_{j}^{*}, 1) e^{\theta_{j}^{*}\Lambda} \Theta_{0} e^{\theta_{j}\Lambda} ( \alpha_{k}, \beta_{k}, 1)^{T}\\
+    &= \frac{1}{\lambda^{*}-\lambda_{k}} (\alpha_{j}^{*}, \beta_{j}^{*}, 1) \Theta_{0} e^{(\theta_{j}^{*}+\theta_{j})\Lambda} ( \alpha_{k}, \beta_{k}, 1)^{T} \Leftarrow (\Theta_{0} e^{\theta_{j}\Lambda}=e^{\theta_{j}\Lambda} \Theta_{0})\\
+    &= \frac{1}{\lambda_{j}^{*}-\lambda_{k}}\left[(a \alpha_{j}^{*}\alpha_{k}+ b\beta_{j}^{*}\alpha_{k}+ b^{*}\alpha_{j}^{*}\beta_{k}+d \beta_{j}^{*}\beta_{k})\rme^{-(\theta_{k}+\theta_{j}^{*})} + \rme^{\theta_{k}+\theta_{j}^{*}}\right]
+    \end{aligned}
+\end{equation}
+The $ p, q $ can be similarly obtained.
+\end{proof}
+
+
+\section{The relation between origin and reductions}
+\begin{note}
+    这里完全仿照上一章的写法, 有些地方尚未完善
+\end{note}
+Indeed $ \forall \{ \zeta_{k}, a_{k}, b_{k} \} $ of the discrete scattering data, where $ \zeta \in \mathbb{C_{+}} $ is the eigenvalue of \eqref{eq:reverse-x-NLS-eigenvalue}, whose discrete eigenfunction $ Y_{k} $ has the following asymptotics 
+\begin{equation}
+    Y_{k}(x) \to \begin{bmatrix} \alpha_{k} \rme^{-\rmi \zeta_{k} x} \\ \beta_{k} \rme^{-\rmi \zeta_{k} x} \\ 0 \end{bmatrix}, x \to -\infty, 
+    \quad 
+    Y_{k}(x) \to \begin{bmatrix} 0 \\0 \\ -\gamma_{k} \rme^{\rmi \zeta_{k} x} \end{bmatrix}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-3d-NLS-eigenfunction}
+\end{equation}
+Analogously, for the eigenvalue $ \bar{\zeta} \in \mathbb{C_{-}} $ of the adjoint eigenvalue problem \eqref{eq:reverse-x-NLS-adjoint-eigenvalue}, the discrete eigenfunction $ K_{k} $ has the following asymptotics 
+\begin{equation}
+    K_{k}(x) \to \begin{bmatrix} \bar{\alpha}_{k} \rme^{-\rmi \bar{\zeta}_{k} x} &\bar{\beta}_{k} \rme^{-\rmi \bar{\zeta}_{k} x} & 0 \end{bmatrix}\Theta_{0}, x \to -\infty, 
+    \quad 
+    K_{k}(x) \to \begin{bmatrix} 0 & 0 & -\bar{\gamma}_{k}\rme^{-\rmi \bar{\zeta}_{k}x} \end{bmatrix}\Theta_{0}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-3d-NLS-adjoint-eigenfunction}
+\end{equation}
+In view of this connection, in order to derive symmetry relations on the (discrete) scattering data, we will use symmetry relations of discrete eigenmodes in the eigenvalue problems \eqref{eq:AKNS-x-Lax}-\eqref{eq:AKNS-x-adjoint-Lax}.
+\begin{note}
+    以下假设如果 $ v_{k} $ 为 $ Y_{x} = -YM $ 的特征向量, 则 $ (YA)_{x} = -(YA)M $ 的特征值为 $ v_{k}M $ 
+
+    但还没有证明
+\end{note}
+\subsection{Inverse Space}
+In this case $ a, d \in \mathbb{R}, b = c^{*} $, $ p_{1} = p^{*}(-x,t), q_{1} = q^{*}(-x,t) $ and $ \zeta \in \mathbb{C}_{+} $.
+\begin{theorem}[Inverse Space]
     For the inverse-space AKNS \eqref{eq:AKNS-inverse-x}, if $ \zeta $ is an eigenvalue, so is $ -\zeta^{*} $. Thus non-pirely-imaginary eigenvalues appear as $(\zeta, -\zeta^{*})$, which lie in the same half of the complex plane. Symmetry relations are given as follows:
     \begin{enumerate}
-        \item If $ (\zeta_{k}, \hat{\zeta_{k}}) \in \mathbb{C_{+}}$, then $\hat{\zeta_{k}} = - \zeta^{*}_{k} $, their column eigenvectors are related as $\hat{\mathbf{v}}_{k0} = \sigma_{1} \mathbf{v}_{k0}^{*}$.
-        \item If $ \zeta_{k} \in i\mathbb{R}_{+} $, its eigenvectors is of the form $\mathbf{v}_{k0} = (1, e^{\rmi\theta_{k}})^{T} $, where $ \theta_{k} $ is a real constant.
-        \item If $ (\bar{\zeta_{k}}, \hat{\bar{\zeta_{k}}}) \in \mathbb{C_{-}} $, then $\hat{\bar{\zeta_{k}}} = - \bar{\zeta}^{*}_{k} $, their row eigenvectors are related as $\hat{\bar{\mathbf{v}}}_{k0} = \bar{\mathbf{v}}_{k0}^{*} \sigma_{1}$.
-        \item If $ \bar{\zeta_{k}} \in i\mathbb{R}_{-} $, its eigenvectors is of the form $\bar{\mathbf{v}}_{k0} = (1 ,e^{\rmi\bar{\theta}_{k}})$, where $ \bar{\theta}_{k} $ is a real constant.
+        \item If $ (\zeta_{k}, \hat{\zeta_{k}}) \in \mathbb{C_{+}}$, then $\hat{\zeta_{k}} = - \zeta^{*}_{k} $, their column eigenvectors are related as $\hat{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{\dagger}\Theta_{0}\Theta_{1}$.
+        \item If $ \zeta_{k} \in i\mathbb{R}_{+} $, its eigenvectors is of the form $\mathbf{v}_{k0} = (e^{\rmi\theta_{k1}}, e^{\rmi\theta_{k2}}, 1 )^{T} $, where $ \theta_{k} $ is a real constant.
+        % \item If $ (\bar{\zeta_{k}}, \hat{\bar{\zeta_{k}}}) \in \mathbb{C_{-}} $, then $\hat{\bar{\zeta_{k}}} = - \bar{\zeta}^{*}_{k} $, their row eigenvectors are related as $\hat{\bar{\mathbf{v}}}_{k0} = \bar{\mathbf{v}}_{k0}^{*} \sigma_{1}$.
+        % \item If $ \bar{\zeta_{k}} \in i\mathbb{R}_{-} $, its eigenvectors is of the form $\bar{\mathbf{v}}_{k0} = (1 ,e^{\rmi\bar{\theta}_{k}})$, where $ \bar{\theta}_{k} $ is a real constant.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
+    The reverse-space NLS equation \eqref{eq:AKNS-inverse-x} was derived from the couped Schrödinger equations under the reduction of $p_{1} = p^{*}(-x,t), q_{1} = q^{*}(-x,t) $ and the potential matrix $ P $ and $\Theta_1$ is 
+    \begin{equation}
+        P = \begin{pmatrix}
+            0 & 0 & p(x,0) \\ 0 & 0 & q(x,0) \\ -r_{1}(-x,0) & -r_{2}(-x,0) & 0 
+        \end{pmatrix} \quad \Theta_1 = \begin{pmatrix}
+            a & b^{*} & \\ b & d & \\ & & -1 
+        \end{pmatrix}
+    \end{equation}
+    obviously, we have $ P^\dagger(-x) = \Theta_{1} P(x) \Theta_{1}^{-1} $, so 
+    \begin{equation}
+        \begin{aligned}
+            Y_{x} = \rmi \zeta \Lambda Y + PY &\implies -Y_{x}(-x) = \rmi \zeta \Lambda Y(-x) + P(-x)Y(-x) \\
+            &\implies -Y_{x}^{\dagger}(-x) = -\rmi \zeta^{*} Y^{\dagger}(-x) \Lambda + Y^{\dagger}(-x) P^{\dagger}(-x)= -\rmi \zeta^{*}Y^{\dagger}(-x) \Lambda + Y^{\dagger}\Theta_{1} P(x) \Theta_{1}^{-1} \\
+            &\implies Y_{x}^{\dagger}(-x) \Theta_{1} = \rmi \zeta^{*} Y^{\dagger}(-x) \Lambda \Theta_{1} - Y^{\dagger}(-x) \Theta_{1} P^{\dagger}(x) \\
+        \end{aligned}
+    \end{equation}
+    If set $ \hat{Y}(x) = Y(-x)\Theta_{1}, \hat{\zeta} = -\zeta^{*} $, and because $ \Lambda \Theta_{1} = \Theta_{1} \Lambda $, we have
+    \begin{equation}
+         \hat{Y}(x) = -\rmi \hat{\zeta} \hat{Y}(x) \Lambda - \hat{Y}(x) P(x) = -\hat{Y}(\rmi \hat{\zeta} \Lambda + P(x)) 
+    \end{equation}
+    It means that $ [\hat{\zeta}, \hat{Y}(x)] $ is satifies the adjoint eigenvalue equation \eqref{eq:AKNS-x-adjoint-Lax}.
+\end{proof}
+\subsection{Inverse Time}
+In this case $ b = c $, $ p_{1}=p(x,-t), q_{1} = q(x,-t) $
+\begin{theorem}[Inverse Time]
+    For the reverse-time NLS equation \eqref{eq:AKNS-inverse-t}. If $\zeta$ is a discrete eigenvalue of the associated Lax pair, then so is $-\zeta$. Hence, the discrete spectrum is symmetric with respect to the origin, and eigenvalues always appear in pairs $(\zeta, -\zeta)$, located in opposite halves of the complex plane.
     
+    For each such pair $(\zeta_k, \hat{\zeta}_k)$ with $\zeta_k \in \mathbb{C}_+$ and $\hat{\zeta}_k = -\zeta_k \in \mathbb{C}_-$, the associated eigenvectors $\mathbf{v}_{k0}$ and $\hat{\mathbf{v}}_{k0}$ satisfy $ \hat{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{\dagger}\Theta_{0}\Theta_{2} $.
+\end{theorem}
+\begin{proof}
+    we can get $ P^{T}(x) = -\Theta_{2} P(x) \Theta_{2}^{-1} $, where $ \Theta_{2} $ is 
+    \begin{equation}
+        \Theta_{2} = \begin{pmatrix}
+            a & b & \\ b & d & \\ & & 1
+        \end{pmatrix}
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            Y_{x}(x) = \rmi \zeta \Lambda Y + PY &\implies  Y_{x}(x) = \rmi \zeta \Lambda Y(x) + P(x)Y(x) \\
+             &\implies Y_{x}^{T}(x) = \rmi \zeta Y^{T}(x) \Lambda + Y^{T}(x) P^{T}(x) = \rmi \zeta Y^{T}(x) \Lambda - Y^{T}(x) \Theta_{2} P(x) \Theta_{2}^{-1} \\
+             &\implies Y_{x}^{T}(x) \Theta_{2} = \rmi \zeta Y^{T}(x) \Lambda \Theta_{2} - Y^{T}(x) P(x) 
+         \end{aligned}
+    \end{equation}
+    If we set $ \hat{Y}(t) = Y(-t)M, \hat{\zeta} = -\zeta $, and because $ \sigma_{3}\Theta_{2} = \Theta_{2} \sigma_{3} $, we have
+    \begin{equation}
+        \hat{Y}_{x}(t) = -\rmi \hat{\zeta} \hat{Y}(t) \sigma_{3} - \hat{Y}(t) P(t) = -\hat{Y}(t)(\rmi \hat{\zeta}\sigma_{3} + P(t))
+    \end{equation}
+    It means that $ [\hat{\zeta}, \hat{Y}(t)] $ is satifies the adjoint eigenvalue equation \eqref{eq:AKNS-x-adjoint-Lax}.
+
+    Thus, if $ \zeta_{k} \in \mathbb{C}_{+}$ is an eigenvalue of the scattering problem \eqref{eq:AKNS-x-Lax}, then $ \hat{\zeta}_{k} = - \zeta_{k} \in \mathbb{C}_{-} $ is an eigenvalue of the adjoint scattering problem \eqref{eq:AKNS-x-adjoint-Lax}. %Utilizing this eigenfunction relation as well as the large-x asymptotics of the eigenfunctions and adjoint eigenfunctions in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}-\eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we readily find that $ \bar{a}_{k} = a_{k}, \bar{b}_{k} = b_{k} $ and $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $. This completes the proof of the theorem.
 \end{proof}
 
+\subsection{Inverse Space-Time}
+In this case $ b = c $, $ p_{1} = p(-x,-t), q_{1} = q(-x,-t) $ and $ \zeta \in \mathbb{C}_{+} $.
+
+\begin{theorem}[Inverse Time]
+    For the reverse-time NLS equation \eqref{eq:AKNS-inverse-t}. If $\zeta$ is a discrete eigenvalue of the associated Lax pair, then so is $-\zeta$. Hence, the discrete spectrum is symmetric with respect to the origin, and eigenvalues always appear in pairs $(\zeta, -\zeta)$, located in opposite halves of the complex plane.
+    
+    For each such pair $(\zeta_k, \hat{\zeta}_k)$ with $\zeta_k \in \mathbb{C}_+$ and $\hat{\zeta}_k = -\zeta_k \in \mathbb{C}_-$, the associated eigenvectors $\mathbf{v}_{k0}$ and $\hat{\mathbf{v}}_{k0}$ satisfy $ \hat{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{\dagger}\Theta_{0}\Theta_{3}  $.
+\end{theorem}
+
+\begin{proof}
+    The reverse-space NLS equation \eqref{eq:AKNS-inverse-x} was derived from the couped Schrödinger equations under the reduction of $p_{1} = p(-x,-t), q_{1} = q(-x,-t) $ and the potential matrix $ P $ and $\Theta_3$ is 
+    \begin{equation}
+        \Theta_{3} = \begin{pmatrix}
+            a & b & \\ b & d &  \\ &  & -1 
+        \end{pmatrix}
+    \end{equation}
+    obviously, we have $ P^{T}(-x) = \Theta_{3} P(x) \Theta_{3}^{-1} $, so 
+    \begin{equation}
+        \begin{aligned}
+            Y_{x}(x) = \rmi \lambda \sigma_{3} Y + PY &\implies  -Y_{x}(-x) = \rmi \lambda \sigma_{3} Y(-x) + P(-x)Y(-x) \\
+             &\implies -Y_{x}^{T}(-x) = \rmi \lambda Y^{T}(-x) \sigma_{3} + Y^{T}(-x) P^{T}(-x) = \rmi \lambda Y^{T}(x) \sigma_{3} + Y^{T}(-x) \Theta_{2} P(x) \Theta_{2}^{-1} \\
+             &\implies Y_{x}^{T}(-x) \Theta_{2} = -\rmi \lambda Y^{T}(x) \sigma_{3} \Theta_{2} - Y^{T}(-x) P(x) 
+         \end{aligned}
+    \end{equation}
+    If we set $ \hat{Y}(x) = Y(-x)M, \hat{\zeta} = \zeta $, and because $ \sigma_{3}\Theta_{3} = \Theta_{3} \sigma_{3} $, we have
+    \begin{equation}
+        \hat{Y}_{x}(t) = -\rmi \hat{\zeta} \hat{Y}(t) \sigma_{3} - \hat{Y}(t) P(t) = -\hat{Y}(t)(\rmi \hat{\zeta}\sigma_{3} + P(t))
+    \end{equation}
+    It means that $ [\hat{\zeta}, \hat{Y}(t)] $ is satifies the adjoint eigenvalue equation \eqref{eq:AKNS-x-adjoint-Lax}.
+
+    Thus, if $ \zeta_{k} \in \mathbb{C}_{+}$ is an eigenvalue of the scattering problem \eqref{eq:AKNS-x-Lax}, then $ \hat{\zeta}_{k} = \zeta_{k} \in \mathbb{C}_{+} $ is an eigenvalue of the adjoint scattering problem \eqref{eq:AKNS-x-adjoint-Lax}. %Utilizing this eigenfunction relation as well as the large-x asymptotics of the eigenfunctions and adjoint eigenfunctions in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}-\eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we readily find that $ \bar{a}_{k} = a_{k}, \bar{b}_{k} = b_{k} $ and $ \bar{\mathbf{v}}_{k0} = \mathbf{v}_{k0}^{T} $. This completes the proof of the theorem.
+\end{proof}
