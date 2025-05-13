@@ -91,7 +91,7 @@ We first present symmetry relations of the secattering data for the reverse-spac
         1 & 0
     \end{pmatrix}
 \end{equation}
-which is a Paili spin matrix.
+which is a Pauli matrix.
 \subsection{The reverse-space NLS equation}
 \begin{theorem} \label{thm:NLS-inverse-x}
     For the reverser-space NLS equation \eqref{eq:reverse-x-NLS}, if $ \zeta $ is an eigenvalue, so is $ -\zeta^{*} $. Thus, non-pirely-imaginary eigenvalues appear as pairs $(\zeta, -\zeta^{*})$, which lie in the same half of the complex plane. Symmetry ralations on the eigenvactors are given as follows: 
@@ -114,7 +114,7 @@ Before proving this theorem, we first establish a connection between the discret
 \begin{subequations}
 \begin{align}
     Y_{x} = - \rmi \zeta \Lambda Y + QY, \label{eq:reverse-x-NLS-eigenvalue}\\
-    K_{x} = \rmi \zeta \Lambda K + KQ \label{eq:reverse-x-NLS-adjoint-eigenvalue}
+    K_{x} = \rmi \zeta \Lambda K - KQ \label{eq:reverse-x-NLS-adjoint-eigenvalue}
 \end{align}
 \end{subequations}
 where the potenitial matrix $ Q $ is given by
@@ -124,7 +124,13 @@ where the potenitial matrix $ Q $ is given by
         r(x,0) & 0
     \end{pmatrix}
 \end{equation} 
-and $ q(x,0), r(x,0) $ are the initial conditions of functions $ q(x,t), r(x,t) $ at $ t = 0 $. Indeed $ \forall \{ \zeta_{k}, a_{k}, b_{k} \} $ of the discrete scattering data, where $ \zeta \in \mathbb{C_{+}} $ is the eigenvalue of \eqref{eq:reverse-x-NLS-eigenvalue}, whose discrete eigenfunction $ Y_{k} $ has the following asymptotics 
+and $ q(x,0), r(x,0) $ are the initial conditions of functions $ q(x,t), r(x,t) $ at $ t = 0 $. 
+
+\begin{note}
+    这里使用 $ Q(x) = Q(x,0) $ 是因为在空间谱问题中, 时间 t 被视为固定参数? 存疑
+\end{note}
+
+Indeed $ \forall \{ \zeta_{k}, a_{k}, b_{k} \} $ of the discrete scattering data, where $ \zeta \in \mathbb{C_{+}} $ is the eigenvalue of \eqref{eq:reverse-x-NLS-eigenvalue}, whose discrete eigenfunction $ Y_{k} $ has the following asymptotics 
 \begin{equation}
     Y_{k}(x) \to \begin{bmatrix} a_{k} \rme^{-\rmi \zeta_{k} x} \\ 0 \end{bmatrix}, x \to -\infty, \quad Y_{k}(x) \to \begin{bmatrix} 0 \\ -b_{k} \rme^{\rmi \zeta_{k} x} \end{bmatrix}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-NLS-eigenfunction}
 \end{equation}
@@ -133,6 +139,7 @@ Analogously, for the eigenvalue $ \bar{\zeta} \in \mathbb{C_{-}} $ of the adjoin
     K_{k}(x) \to \begin{bmatrix} \bar{a}_{k} \rme^{-\rmi \bar{\zeta}_{k} x} & 0 \end{bmatrix}, x \to -\infty, \quad K_{k}(x) \to \begin{bmatrix} 0 & -\bar{b}_{k}\rme^{-\rmi \bar{\zeta}_{k}x} \end{bmatrix}, x \to +\infty \label{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}
 \end{equation}
 In view of this connection, in order to derive symmetry relations on the (discrete) scattering data, we will use symmetry relations of discrete eigenmodes in the eigenvalue problems \eqref{eq:reverse-x-NLS-eigenvalue}-\eqref{eq:reverse-x-NLS-adjoint-eigenvalue}.
+
 \begin{proof}
     The reverse-space NLS equation\eqref{eq:reverse-x-NLS} was derived from the coupled Schrödinger equations \eqref{eq:coupled-NLS} under the reduction of \eqref{eq:reverse-x-NLS-reduction}, and the potential matrix $ Q $ is 
     \begin{equation}
@@ -211,7 +218,7 @@ In view of this connection, in order to derive symmetry relations on the (discre
             -q(-x,0) & 0
         \end{pmatrix}
     \end{equation}
-    which features the following symmetry $ Q^{*}(-x) = -\sigma_{1}^{-1}Q(x)\sigma_{1} $. Then, taking the adjoint of the eigenvalue problem \eqref{eq:reverse-x-NLS-eigenvalue}, we have
+    which features the following symmetry $ Q(-x) = -\sigma_{1}^{-1}Q(x)\sigma_{1} $. Then, taking the adjoint of the eigenvalue problem \eqref{eq:reverse-x-NLS-eigenvalue}, we have
     \begin{equation}
         \begin{aligned}
         Y_{x} = -\rmi \zeta \Lambda Y + QY &\implies -Y_{x}(-x) = -\rmi \zeta \Lambda Y(-x) + Q(-x)Y(-x) \\
@@ -231,5 +238,3 @@ In view of this connection, in order to derive symmetry relations on the (discre
 
     Since \eqref{eq:reverse-x-t-NLS-eigenvector} also means that for any eigenvalue $ \bar{\zeta}_{k} \in \mathbb{C}_{-} $, if $ K_{k}(x) $ is its adjoint eigenfunction, so is $ \hat{K}_{k}(x) = \sigma_{1} K(-x) $. Hence utilizing this relation and the large-x asymptotics of the adjoint eigenfunction $ \hat{K}_{k}(x) $ in \eqref{eq:large-x-asymptotics-of-reverse-x-NLS-adjoint-eigenfunction}, we can similarly show that $ \bar{\mathbf{v}}_{k0} = (1, \bar{\omega}_{k}) $, where $ \bar{\omega}_{k} = \pm 1 $. This complests the proof of the theorem.
 \end{proof}
-
-Before concluding this section, we point that it is also possible to impose $ (q,r) $ reductions \eqref{eq:reverse-x-NLS-reduction}-\eqref{eq:reverse-x-t-NLS-reduction} directly on the determinant solutions \eqref{eq:soliton-coupled-NLS} in order to extract symmetry relations on the scattering data $ \{\zeta_{k},\bar{\zeta}_{k},\mathbf{v}_{k0}, \bar{\mathbf{v}}_{k0}, 1 \leq k \leq N \} $. However, our derivation of these relations above is easier. In addition, this derivation is more insightful since it is in the inverse-scattering and Riemann-Hilbert framework.
